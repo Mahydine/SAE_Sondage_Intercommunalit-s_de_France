@@ -12,11 +12,11 @@ class View{
         $this->file= 'views/View'.$file.'.php';
     }
 
-    public function generate($data){
-        function img($name){
-            return 'public/img/'.$name;
-        }
+    public function img($name) {
+        return 'public/img/' . $name;
+    }
 
+    public function generate($data){
         $content = $this->generateFile($this->file, $data);
         $view = $this->generateFile('views/template.php', ['titre'=>$this->titre, 'content'=>$content, 'css'=>$this->css]);
 
@@ -27,7 +27,7 @@ class View{
         if(file_exists($file)){
             extract($data);
             ob_start();
-            require $file;
+            require_once $file;
             return ob_get_clean();
         }else{
             throw new Exception('Fichier '.$file. ' introuvable. ');

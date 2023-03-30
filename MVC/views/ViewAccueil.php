@@ -1,4 +1,3 @@
-
 <?php
 //les fonction liees a cette vue
 require_once 'views/functions/accueil.php';
@@ -12,14 +11,14 @@ require_once 'views/functions/accueil.php';
                 <div class="info-container">
                     <h2>Nombre de participants:</h2>
                     <div class="content">
-                        <img src="<?= img('sondage.svg') ?>"alt="Icon personnage"/>
+                        <img src="<?= $view->img('sondage.svg') ?>"alt="Icon personnage"/>
                         <h2><?= $nbParticipants?></h2>
                     </div>
                 </div>
                 <div class="info-container">
                     <h2>Nombre d'aliments appréciés:</h2>
                     <div class="content">
-                        <img src="<?= img('food.svg') ?>"alt="Icon Aliment"/>
+                        <img src="<?= $view->img('food.svg') ?>"alt="Icon Aliment"/>
                         <h2><?= $nbAliments?></h2> 
                     </div>
                 </div>
@@ -29,7 +28,7 @@ require_once 'views/functions/accueil.php';
             <div class="container">
                 <h1>Top 10 des aliments les plus appréciés :</h1>
                 <div class="content">
-                    <?php echo afficher_aliments($top10Aliments) ?> 
+                    <?php echo afficher_aliments($top10Aliments, $view) ?> 
                 </div>
             </div>
 

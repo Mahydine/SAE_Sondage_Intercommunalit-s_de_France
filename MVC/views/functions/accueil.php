@@ -1,6 +1,6 @@
 <?php 
 
-function afficher_aliments(array $aliments){
+function afficher_aliments(array $aliments, $view){
     $cpt = 1;
 
     $html = "";
@@ -9,9 +9,9 @@ function afficher_aliments(array $aliments){
                     <span>
         ';
         switch($cpt){
-            case $cpt===1 : $html .= '<img src="'.img('top1.svg').'" />'; break;
-            case $cpt==2 : $html .= '<img src="'.img('top2.svg').'" />'; break;
-            case $cpt==3 : $html .= '<img src="'.img('top3.svg').'" />'; break;
+            case $cpt===1 : $html .= '<img src="'.$view->img('top1.svg').'" />'; break;
+            case $cpt==2 : $html .= '<img src="'.$view->img('top2.svg').'" />'; break;
+            case $cpt==3 : $html .= '<img src="'.$view->img('top3.svg').'" />'; break;
         };
         $html .= $aliment['aliment']->getNom();
         $html .= "</span>
@@ -23,4 +23,4 @@ function afficher_aliments(array $aliments){
     }
     return $html;    
     
-} ?>
+}

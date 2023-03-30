@@ -1,9 +1,9 @@
 <?php
 spl_autoload_register(function($class){
-    require('models/'.$class.".php");
+    require_once('models/'.$class.".php");
 });
 
-require("controllers/routeur.php");
+require_once("controllers/routeur.php");
 $routeur = new Routeur();
 $routeur->routeurReq();
 

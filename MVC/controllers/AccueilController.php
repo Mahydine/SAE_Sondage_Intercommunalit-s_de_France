@@ -19,9 +19,9 @@ class AccueilController{
         $nbParticipants = $this->apprecieManager->getNbParticipants();
         $nbAliments = $this->apprecieManager->getNbAliments();
         $top10Aliments = $this->getTop10Aliments();
-        require('views/View.php');
+        require_once('./views/View.php');
         $view = new View('Accueil', 'Accueil.css', 'Accueil');
-        $view->generate(['nbParticipants'=>$nbParticipants, 'nbAliments'=>$nbAliments,'top10Aliments'=>$top10Aliments] );
+        $view->generate(['nbParticipants'=>$nbParticipants, 'nbAliments'=>$nbAliments,'top10Aliments'=>$top10Aliments, 'view' => $view] );
     }
 
     //retourne une array des top 10 aliments et le nombre de fois ou ils ont ete choisis
