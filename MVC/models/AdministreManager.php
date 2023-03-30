@@ -25,4 +25,5 @@ class AdministreManager extends ModelManager{
         echo '</pre>';
         return $administre;
     }
+    
 }

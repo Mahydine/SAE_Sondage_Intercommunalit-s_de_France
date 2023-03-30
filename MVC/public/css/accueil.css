@@ -1,71 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-*{
+
+* {
     font-family: 'Merriweather', serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: rgb(237, 243, 255);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-h1{
-    font-size: 1.2em;
+h1 {
+    font-size: 1.6em;
     padding: 10px;
     padding-left: 0;
 }
 
-.haut-page{
+h2 {
+    font-size: 1.4em;
+}
+
+.page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.haut-page {
     display: flex;
     flex-direction: column;
-    width: 740px;
+    width: 100%;
     margin: auto;
 }
 
-.haut-page .container{
-    width: auto;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+.haut-page .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.info-container{
-    width: 340px;
+.info-container {
+    flex: 1;
+    min-width: 300px;
     padding: 10px;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 10px;
 }
 
-.info-container .content{
+.info-container .content {
     display: flex;
     padding: 10px;
     align-items: center;
 }
-.info-container h2{
+
+.info-container h2 {
     padding: 10px;
     font-size: 1.1em;
 }
-.info-container .content img{
-    width: 40px;    
-    margin-right: 10px;
 
+.info-container .content img {
+    width: 40px;
+    margin-right: 10px;
 }
 
-.mid-page{
-    max-width: 740px;
+.mid-page {
+    max-width: 100%;
     margin: auto;
 }
 
-.mid-page .container{
+.mid-page .container {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: white;
     margin-top: 20px;
     padding: 20px;
 }
-.mid-page .container h1{
+
+.mid-page .container h1 {
     margin-bottom: 10px;
 }
-.mid-page .container .content .row{
+
+.mid-page .container .content .row {
     border-bottom: 1px solid rgb(216, 216, 216);
     margin-bottom: 10px;
     padding: 10px;
@@ -75,32 +95,83 @@ h1{
     align-items: center;
     justify-content: space-between;
 }
-.mid-page .container .content .row span{
+
+.mid-page .container .content .row span {
     display: flex;
     align-items: center;
     font-size: 0.9em;
 }
 
-.mid-page .container .content .row img{
+.mid-page .container .content .row img {
     width: 30px;
     margin-right: 5px;
 }
 
-.container.conso_moy .content{
+.container.conso_moy .content {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
-.container.conso_moy .content .part{
 
-    border: 1px solid rgb(219, 219, 219);   
+.container.conso_moy .content .part {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid rgb(219, 219, 219);
     padding: 20px;
+    margin: 10px;
 }
 
-
-.container.conso_moy .content h2{
+.container.conso_moy .content h2 {
     font-size: 20px;
     text-align: center;
     height: 60px;
+}
+
+/* Menu burger */
+.menu-burger {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-burger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+/* Styles pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .menu-burger {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav.actif {
+        display: block;
+    }
+
+    .haut-page .container {
+        flex-direction: column;
+    }
+
+    .mid-page .container .content .row {
+        flex-direction: column;
+    }
+
+    .container.conso_moy .content {
+        flex-direction: column;
+    }
+}
+
+/* Styles pour l'accessibilité et l'ergonomie */
+:focus-visible {
+outline: 2px solid #1c6dff;
+outline-offset: 2px;
 }

@@ -4,8 +4,6 @@ const graph1 = document.getElementById('graphique1');
 const graph2 = document.getElementById('graphique2');
 const graph3 = document.getElementById('graphique3');
 
-console.log("cac");
-
 //graph1
 //recupere les labels d'un graphique envoyee en php
 const data_labels_graph1 = Object.keys(data_consommation_age_categories);
@@ -20,6 +18,15 @@ const data_graph2 = Object.values(data_moyenne_nutiments_principales);
 const data_labels_graph3 = Object.keys(data_moyenne_nutriments_secondaires);
 const data_graph3 =  Object.values(data_moyenne_nutriments_secondaires);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBurger = document.querySelector('.menu-burger');
+  const rightPart = document.querySelector('.right-part');
+
+  menuBurger.addEventListener('click', () => {
+    rightPart.classList.toggle('navbar-open');
+    menuBurger.classList.toggle('navbar-open');
+  });
+});
 
 function getDataDaughnut(data_labels, data, label){
   return data = {
@@ -73,3 +80,6 @@ new Chart(graph3, {
   type: 'pie',
   data : getDataDaughnut(data_labels_graph3, data_graph3, "Moyenne")
 })
+
+const villeSelect = document.getElementById('ville-select');
+const top3AlimentsParVille = document.getElementById('top3-aliments-par-ville');
