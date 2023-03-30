@@ -1,0 +1,1 @@
+{"version":1,"defects":{"EmailTest::testCanBeCreatedFromValidEmail":7,"AdministreTest::testCreateAdministe":7,"AdministreManagerTest::testStub":8},"times":{"EmailTest::testCanBeCreatedFromValidEmail":0.012,"AdministreTest::testCreateAdministe":0,"AdministreManagerTest::testStub":0.016}}

@@ -26,6 +26,14 @@ class Administre{
         $this->nom = $nom;
     }
 
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getNom(){
+        return $this->nom;
+    }
+
     public function setDateNaiss($date){
         $this->dateNaiss= $date;
     }
