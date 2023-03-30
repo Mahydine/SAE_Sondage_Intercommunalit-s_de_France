@@ -1,5 +1,5 @@
+
 <?php
-//les fonction liees a cette vue
 require_once 'views/functions/accueil.php';
 ?>
 
@@ -38,17 +38,24 @@ require_once 'views/functions/accueil.php';
             </div>
 
             <div class="container conso_moy">
-                <h1>Composition moyenne des aliments choisis</h1>
+                <h1>Composition moyenne des aliments choisis </h1>
                 <div class="content">
                     <div class="part">
-                        <h2>Nutriments principaux</h2>
+                        <h2>Nutriments principaux (100g)</h2>
                         <canvas id="graphique2"></canvas>
                     </div>
                     <div class= "part">
-                        <h2>Nutriments secondaires</h2>
+                        <h2>Nutriments secondaires (100mg) </h2>
                         <canvas id="graphique3"></canvas>
                     </div>
                 </div>
             </div> 
         </div>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const data_consommation_age_categories = <?php echo json_encode($categorieAge) ?>;
+const data_moyenne_nutiments_principales = <?php echo json_encode($moyenneNutrimentsPrincipaux) ?>;
+const data_moyenne_nutriments_secondaires = <?php echo json_encode($moyenneNutrimentsSecondaires) ?>;
+
+ </script>

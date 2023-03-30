@@ -20,7 +20,7 @@ class SondageController
         $allAlimentsByCategories = $this->getAllAlimentsByCategories();
         $errorMSG = $this->traitementSondage();
         require_once('./views/View.php');
-        $view = new View('Sondage', 'Sondage.css', 'Sondage');
+        $view = new View('Sondage', 'Sondage.css', 'Sondage', 'sondage.js');
         $view->generate([
             'categories' => $categories,
             'allAlimentsByCategories' => $allAlimentsByCategories,
