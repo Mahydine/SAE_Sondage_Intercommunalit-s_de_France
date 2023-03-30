@@ -1,0 +1,302 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: #fff;
+    background: #d8b954;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #d8b954;
+}
+
+body {
+    font-family: 'Whitney SemiBold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #444;
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+#sectionDroiteSondage {
+    display: flex;
+    flex-direction: column;
+}
+
+#sectionAdministreSondage, #sectionAlimentSondage, #sectionAlimentChoisiSondage {
+    max-width: 500px;
+    margin: 10px 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#sectionAlimentChoisiSondage{
+    position: relative;
+}
+
+#sectionAdministreSondage {
+    width: 200%;
+    height: fit-content;
+}
+
+h1#titreSondage {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#liste-aliments {
+    max-height: 100px;
+    overflow-x: auto;
+}
+
+#liste-aliments li {
+    display: flex;
+    align-items: center;
+    margin: 7px;
+}
+
+#liste-aliments button {
+    background-color: #d21919;
+    color: #fff;
+    padding: 6px;
+    font-family: 'Whitney SemiBold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input[type="date"] {
+    font-family: 'Whitney SemiBold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+input[type="submit"] {
+    display: flex;
+    align-items: center;
+    width: auto;
+    background-color: #1976d2;
+    color: #fff;
+    padding: 10px 27px 10px 27px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Whitney SemiBold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute; 
+    bottom: 10px;
+    right: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #1565c0;
+}
+
+.titrePartiesSondage {
+    font-family: 'Whitney Light Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+#container-aliments {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    margin-bottom: 0.2rem;
+}
+
+select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    background-color: #1976d2;
+    color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+    font-family: 'Whitney SemiBold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+select:hover,
+select:focus {
+    outline: none;
+    background-color: #1e82e5;
+    border-radius: 0px;
+}
+
+option[disabled] {
+    color: #A5A5A5;
+}
+
+option[selected] {
+    font-weight: bold;
+}
+
+.errorMSG{
+    color: red;
+}
+
+/* Media queries */
+
+/* Styles existants */
+/* ... */
+
+/* Media queries pour différentes tailles d'écran */
+
+@media screen and (max-width: 1200px) {
+    #sectionAdministreSondage, #sectionAlimentSondage, #sectionAlimentChoisiSondage {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sectionAdministreSondage, #sectionAlimentSondage, #sectionAlimentChoisiSondage {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1#titreSondage {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+
+    .titrePartiesSondage {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #sectionAdministreSondage, #sectionAlimentSondage, #sectionAlimentChoisiSondage {
+        margin: 10px 10px;
+        padding: 10px;
+    }
+
+    h1#titreSondage {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+    select {
+        font-size: 12px;
+    }
+
+    .titrePartiesSondage {
+        font-size: 14px;
+    }
+}
+
+
+/* Fonts used */
+
+@font-face {
+    font-family: "BoldFont";
+    src: url('../fonts/theboldfont.ttf');
+}
+
+@font-face {
+    font-family: 'Whitney Medium';
+    src: local('Whitney Medium'), url('../fonts/whitneymedium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Medium Italic';
+    src: local('Whitney Medium Italic'), url('../fonts/whitneymediumitalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Semibold Regular';
+    src: local('Whitney Semibold Regular'), url('../fonts/whitneysemibold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Semibold Italic';
+    src: local('Whitney Semibold Italic'), url('../fonts/WhitneySemiboldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Bold';
+    src: local('Whitney Bold'), url('../fonts/whitneybold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Light Regular';
+    src: local('Whitney Light Regular'), url('../fonts/whitneylight.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Light Italic';
+    src: local('Whitney Light Italic'), url('../fonts/whitneylightitalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Book Italic';
+    src: local('Whitney Book Italic'), url('../fonts/whitneybookitalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Whitney Book Regular';
+    src: local('Whitney Book Regular'), url('../fonts/whitneybook.woff') format('woff');
+}
