@@ -148,7 +148,7 @@ final class SondageManagerTest extends TestCase
     $ville = 'Paris';
     $numTel = '0612345678';
 
-    // Créez un mock PDOStatement
+
     $mockPDOStatement = $this->getMockBuilder(PDOStatement::class)
         ->disableOriginalConstructor()
         ->onlyMethods(['execute', 'bindParam'])
@@ -158,7 +158,7 @@ final class SondageManagerTest extends TestCase
     $mockPDOStatement->expects($this->any())
         ->method('bindParam');
 
-    // Créez un mock PDO
+
     $mockPDO = $this->getMockBuilder(PDO::class)
         ->disableOriginalConstructor()
         ->onlyMethods(['prepare'])
@@ -167,7 +167,7 @@ final class SondageManagerTest extends TestCase
         ->method('prepare')
         ->willReturn($mockPDOStatement);
 
-    // Créez un mock SondageManager
+
     $mockSondageManager = $this->getMockBuilder(SondageManager::class)
         ->disableOriginalConstructor()
         ->onlyMethods(['getBdd'])
@@ -176,7 +176,7 @@ final class SondageManagerTest extends TestCase
         ->method('getBdd')
         ->willReturn($mockPDO);
 
-    // Exécutez la méthode setNewAdministe() et vérifiez qu'aucune exception n'est levée
+
     $this->expectNotToPerformAssertions();
     $mockSondageManager->setNewAdministe($nom, $prenom, $dateNaiss, $adresse, $codePostal, $ville, $numTel);
 }
