@@ -75,6 +75,14 @@ class Aliment{
     public function getNom(){
         return $this->nom;
     }
+
+    public function getCategorie(){
+        return $this->categorie;
+    }
+
+    public function getProteines(){
+        return $this->proteines;
+    }
 }
 
 

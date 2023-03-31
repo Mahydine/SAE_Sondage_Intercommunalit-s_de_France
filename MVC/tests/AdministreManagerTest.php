@@ -9,7 +9,7 @@ require 'models/AdministreManager.php';
 final class AdministreManagerTest extends TestCase{
     public function testStub(): void
     {
-        $mockPDOStatement = $this->getMockBuilder(\PDOStatement::class)
+    $mockPDOStatement = $this->getMockBuilder(\PDOStatement::class)
         ->disableOriginalConstructor()
         ->getMock();
     $mockPDOStatement->expects($this->once())
